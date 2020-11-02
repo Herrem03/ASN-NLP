@@ -6,7 +6,7 @@ import re
 import numpy as np
 
 ref = []
-n_pages = 24             #Aller vérifier sur la page de l'ASN
+n_pages = 851             #Aller vérifier sur la page de l'ASN
 dates = []
 titres = []
 links = []
