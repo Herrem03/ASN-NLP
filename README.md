@@ -7,7 +7,6 @@ Web app analyzing French Nuclear Regulation Authority's inspection letters using
 <h2>Dataset</h2>
 
 Dataset is generated using :
-<ul>
 <li>Download_pdf.py</li>
 <li>Conversion_pdf. py</li>
-<\ul>
+
