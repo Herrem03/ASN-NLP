@@ -17,6 +17,8 @@ Dataset is generated using :
 <li>Download_pdf.py</li>
 <li>Conversion_pdf. py</li>
 
+:warning: Some .pdf are scans and therefore cannot be used. About 97% of inspection letters are taken in account up to this date : 23/11/2020.
+
 <h2>Latent Dirichlet Allocation</h2>
 LDA is used to build a recommendation system.
 
