@@ -1,6 +1,6 @@
 <h1>ASN-NLP</h1>
 
-*Disclaimer : This is not the production version and is only for reference and learning purposes.*
+*:warning: This is not the production version and is only for reference and learning purposes.*
 
 Web app analyzing French Nuclear Regulation Authority's inspection letters using LDA, Word2vec and Streamlit. 
 
