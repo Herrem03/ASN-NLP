@@ -19,6 +19,7 @@ ASN_LDA.py includes :
 - Text preprocessing : removing stopwords, remove punctutation, lemmatization
 - LDA pipeline for enhanced GridSearch over *'max_df'* in CountVectorizer(), *'learning_decay'* and *'n_components'* in LatentDirichletAllocation()
 
+<h2>Word2Vec</h2>
 
 <h2>Streamlit App</h2>
 
