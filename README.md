@@ -23,8 +23,8 @@ ASN_LDA.py includes :
 <h2>Streamlit App</h2>
 
 <h2>Author</h2>
-[Rémi MARTINIE](www.linkedin.com/in/rémi-martinie-3107291b9)
+[Rémi MARTINIE](https://www.linkedin.com/in/rémi-martinie-3107291b9)
 
 
 <h2>Acknowledgments</h2>
-Selva Prabhakaran from Machine Learning Plus for the great tutorials [https://www.machinelearningplus.com/category/nlp/]
+Selva Prabhakaran from Machine Learning Plus for the great [tutorials](https://www.machinelearningplus.com/category/nlp/)
