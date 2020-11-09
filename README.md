@@ -43,10 +43,10 @@ ASN_app_fr.py & ASN_app_en.py includes :
 - Recommendation system (from user query extended by Word2Vec or .pdf file)
 
 <h2>Author</h2>
-[Rémi MARTINIE](https://www.linkedin.com/in/rémi-martinie-3107291b9)
+[Rémi MARTINIE](http://www.linkedin.com/in/rémi-martinie-3107291b9)
 
 <h2>Contribution</h2>
 If you want to add features/improvement or report issues, feel free to send a pull request !
 
 <h2>Acknowledgments</h2>
-Selva Prabhakaran from Machine Learning Plus for the great [tutorials](https://www.machinelearningplus.com/category/nlp/)
+Selva Prabhakaran from Machine Learning Plus for the great [tutorials](http://www.machinelearningplus.com/category/nlp/)
