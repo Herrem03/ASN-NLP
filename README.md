@@ -4,7 +4,7 @@
 
 Streamlit app analyzing French Nuclear Regulation Authority's inspection letters using LDA, Word2vec and text mining techniques. 
 
-<h2>Purpose</h2>
+<h2>About the project</h2>
 In industrial nuclear projects, regulation can have serious impact on a project's progress. etc
 
 See [@Medium article] for more explainations. 
