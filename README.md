@@ -46,11 +46,11 @@ ASN_app_fr.py & ASN_app_en.py includes :
 <h2>Author</h2>
 <div>
   
-[Rémi Martinie](https://www.linkedin.com/in/rémi-martinie-3107291b9/foo)
+[Rémi MARTINIE](https://www.linkedin.com/in/rémi-martinie-3107291b9/foo)
 
 </div>
 <h2>Contribution</h2>
 If you want to add features/improvement or report issues, feel free to send a pull request !
 
 <h2>Acknowledgments</h2>
-Selva Prabhakaran from Machine Learning Plus for the great [tutorials](http://www.machinelearningplus.com/category/nlp/)
+Selva Prabhakaran from Machine Learning Plus for the great  <div> [tutorials](http://www.machinelearningplus.com/category/nlp/) </div>
