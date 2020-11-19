@@ -53,8 +53,8 @@ ASN_app_fr.py & ASN_app_en.py includes :
 If you want to add features/improvement or report issues, feel free to send a pull request !
 
 <h2>Acknowledgments</h2>
-Selva Prabhakaran from Machine Learning Plus for the great  <div> 
+<div> 
   
-[tutorials](http://www.machinelearningplus.com/category/nlp/) 
+[Machine Learning Plus](http://www.machinelearningplus.com/category/nlp/) 
 
 </div>
