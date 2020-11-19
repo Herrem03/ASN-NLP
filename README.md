@@ -44,7 +44,7 @@ ASN_app_fr.py & ASN_app_en.py includes :
 - Recommendation system (from user query extended by Word2Vec or .pdf file)
 
 <h2>Author</h2>
-[Remi MARTINIE](https://www.linkedin.com/in/rémi-martinie-3107291b9/foo)
+[https://www.linkedin.com/in/rémi-martinie-3107291b9/foo](https://www.linkedin.com/in/rémi-martinie-3107291b9/foo)
 
 <h2>Contribution</h2>
 If you want to add features/improvement or report issues, feel free to send a pull request !
