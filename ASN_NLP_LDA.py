@@ -112,7 +112,6 @@ for element in max_df:
 
 pause()
 
-
 #------------------------#
 from sklearn.pipeline import Pipeline
 pipeline = Pipeline([
