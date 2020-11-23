@@ -11,9 +11,9 @@ See Medium story for more information :
 
 <div>
  
-[@Medium Part I | Create an exploratory app using LDA, Word2vec and Streamlit](https://medium.com/@remi.martinie03/corpus-analysis-using-nlp-a-glimpse-at-french-nuclear-regulation-ce84697d47bf)
+[Part I | Create an exploratory app using LDA, Word2vec and Streamlit](https://medium.com/@remi.martinie03/corpus-analysis-using-nlp-a-glimpse-at-french-nuclear-regulation-ce84697d47bf)
 
-[@Medium Part II | Extracting knowledge from French Nuclear Safety Authority's Inspection mails](https://medium.com/@remi.martinie03/corpus-analysis-using-nlp-a-glimpse-at-french-nuclear-regulation-482ee6288b12)
+[Part II | Extracting knowledge from French Nuclear Safety Authority's Inspection mails](https://medium.com/@remi.martinie03/corpus-analysis-using-nlp-a-glimpse-at-french-nuclear-regulation-482ee6288b12)
 
 <h2>Requirements</h2>
 
