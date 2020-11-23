@@ -8,11 +8,12 @@ Streamlit app analyzing French Nuclear Regulation Authority's inspection letters
 In industrial nuclear projects, regulation can have serious impact on a project's progress. etc
 
 See Medium story for more information :
-<div> 
+
+<div>
  
-[@Medium article](https://medium.com/@remi.martinie03/corpus-analysis-using-nlp-a-glimpse-at-french-nuclear-regulation-ce84697d47bf) 
- 
-<\div> 
+[@Medium](https://medium.com/@remi.martinie03/corpus-analysis-using-nlp-a-glimpse-at-french-nuclear-regulation-ce84697d47bf)
+
+<\div>
 
 <h2>Requirements</h2>
 
