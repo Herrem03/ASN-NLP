@@ -5,8 +5,15 @@ import json
 import re
 import numpy as np
 
+
+#Get the number of pages to scrap
+page = requests.get("https://www.asn.fr/Controler/Actualites-du-controle/Lettres-de-suite-d-inspection-des-installations-nucleaires/")
+soup = BeautifulSoup(page.content, 'html.parser')
+tree = html.fromstring(page.content)
+soup.prettify()
+n_pages = int(soup.find_all("li")[-1].get_text())
+
 ref = []
-n_pages = 851             #Aller vérifier sur la page de l'ASN
 dates = []
 titres = []
 links = []
@@ -16,17 +23,13 @@ titres_cleared = []
 page_erreur = []
 a=[]
 
-def pause():
-    Pause = input("Appuyer sur entrée pour continuer...")
-    return Pause
-
 #iterate over pages
 for i in range(1, n_pages):
     dates_cleared = []
     titres_cleared = []
     count = 0
     print('Current page :', format(i))
-    page = requests.get("https://www.asn.fr/Controler/Actualites-du-controle/Lettres-de-suite-d-inspection-des-installations-nucleaires/(searchText)/epr/(page)/{}".format(i))
+    page = requests.get("https://www.asn.fr/Controler/Actualites-du-controle/Lettres-de-suite-d-inspection-des-installations-nucleaires/(page)/{}".format(i))
     soup = BeautifulSoup(page.content, 'html.parser')
     tree = html.fromstring(page.content)
     soup.prettify()
@@ -79,7 +82,7 @@ print(dict)
 print('Erreurs détectées aux pages suivantes :', page_erreur)
 
 #Save dictionary
-with open('ASN_scrapped_Flammanville', 'w+') as json_file:
+with open('ASN_scrap', 'w+') as json_file:
     jsoned_data = json.dumps(dict, indent=True, ensure_ascii=False)
     json_file.write(jsoned_data)
 
