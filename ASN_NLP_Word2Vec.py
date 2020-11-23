@@ -4,11 +4,13 @@ import json
 import re
 import os, sys
 from time import time
+
 #ML
 import multiprocessing
 from gensim.models import Word2Vec
 import nltk
 from nltk.tokenize import word_tokenize
+
 #Plot
 from sklearn.manifold import TSNE
 import matplotlib.pyplot as plt
