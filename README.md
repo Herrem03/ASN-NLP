@@ -2,14 +2,17 @@
 
 *:warning: This is not the production version and is only for reference and learning purposes.*
 
-*:warning: Dataset ASN_NLP_dict is larger than 200Mo*
-
 Streamlit app analyzing French Nuclear Regulation Authority's inspection letters using LDA, Word2vec and text mining techniques. 
 
 <h2>About the project</h2>
 In industrial nuclear projects, regulation can have serious impact on a project's progress. etc
 
-See <div> [@Medium article](https://medium.com/@remi.martinie03/corpus-analysis-using-nlp-a-glimpse-at-french-nuclear-regulation-ce84697d47bf) <\div> for more explainations. 
+See Medium story for more information :
+<div> 
+ 
+[@Medium article](https://medium.com/@remi.martinie03/corpus-analysis-using-nlp-a-glimpse-at-french-nuclear-regulation-ce84697d47bf) 
+ 
+<\div> 
 
 <h2>Requirements</h2>
 
