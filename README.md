@@ -13,8 +13,6 @@ See Medium story for more information :
  
 [@Medium](https://medium.com/@remi.martinie03/corpus-analysis-using-nlp-a-glimpse-at-french-nuclear-regulation-ce84697d47bf)
 
-<\div>
-
 <h2>Requirements</h2>
 
 <h2>Dataset</h2>
