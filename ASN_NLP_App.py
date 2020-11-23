@@ -17,7 +17,6 @@ from joblib import load
 import pickle
 from sklearn.metrics.pairwise import euclidean_distances, cosine_distances
 
-
 os.getcwd()
 reload(sys)
 sys.setdefaultencoding('utf8')
