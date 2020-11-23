@@ -21,7 +21,6 @@ from bokeh.palettes import all_palettes
 #Data
 import json
 
-
 def pause():
     Pause = input("Appuyer sur entrée pour continuer...")
     return Pause
