@@ -9,7 +9,7 @@ Regulatory control in the french nuclear industry has an impact on project's cos
 <li>Build a content-based recommendation app of french nuclear regulation authority's inspection letters</li>
 <li>Analyze French nuclear regulation</li>
 
-<!-- -->
+<br>
 
 See Medium stories for more details :
 
