@@ -1,0 +1,15 @@
+streamlit 
+plotly
+numpy 
+json
+os
+subprocess
+re
+sys
+PIL 
+webbrowser
+nltk
+pandas
+joblib 
+pickle
+sklearn
