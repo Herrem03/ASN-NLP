@@ -23,7 +23,7 @@ See Medium stories for more details :
 <h2>Requirements</h2>
 <div>
 
-[BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) | Library for webscrapping.
+[BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) | Webscrapping library.
 
 [PDFMiner](https://pypi.org/project/pdfminer/) | Text extraction tool for PDF documents.
 
@@ -39,7 +39,7 @@ See Medium stories for more details :
 
 [Plotly](https://plotly.com/graphing-libraries/) | Graphing library.
 
-[Pandas](https://pandas.pydata.org/docs/) | Data handling and analysis library.
+[Pandas](https://pandas.pydata.org/docs/) | Data handling library.
 
 <h2>Dataset</h2>
 
