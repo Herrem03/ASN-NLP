@@ -21,21 +21,19 @@ See Medium stories for more details :
 <h2>Requirements</h2>
 <div>
 
-[BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) Library for webscrapping
+[BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) | Library for webscrapping
 
-[PDFMiner](https://pypi.org/project/pdfminer/) Text extraction tool for PDF documents
+[PDFMiner](https://pypi.org/project/pdfminer/) | Text extraction tool for PDF documents
 
-[Scikit-learn](https://scikit-learn.org/stable/modules/classes.html) For Latent Dirichlet Allocation 
+[Scikit-learn](https://scikit-learn.org/stable/modules/classes.html) | For Latent Dirichlet Allocation 
 
-[SpaCy](https://spacy.io/api) NLP package for text processing (stop words, lemmatization, punctuation, tokenization, etc.)
+[SpaCy](https://spacy.io/api) | NLP package for text processing (stop words, lemmatization, punctuation, tokenization, etc.)
 
-[Streamlit](https://docs.streamlit.io/en/stable/) Library to create and share custom web apps for machine learning and data science.
+[Streamlit](https://docs.streamlit.io/en/stable/) | Library to create and share custom web apps for machine learning and data science.
 
-[pyLDAvis](https://github.com/bmabey/pyLDAvis) Library for interactive topic modeling visualization. 
+[pyLDAvis](https://github.com/bmabey/pyLDAvis) | Library for interactive topic modeling visualization. 
 
-[Plotly](https://plotly.com/graphing-libraries/) Graphing library
-
-<\div>
+[Plotly](https://plotly.com/graphing-libraries/) | Graphing library
 
 <h2>Dataset</h2>
 
