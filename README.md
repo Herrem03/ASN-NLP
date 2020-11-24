@@ -5,13 +5,11 @@
 Streamlit app analyzing French Nuclear Regulation Authority's inspection letters using LDA, Word2vec and text mining techniques. 
 
 <h2>About</h2>
-Regulatory control in the french nuclear industry has an impact on project's costs and planning. This project aims to :
-<br>
+This project aims to :
 <li>Build a content-based recommendation app of french nuclear regulation authority's inspection letters</li>
-<li>Analyze French nuclear regulation</li>
+<li>Get an overall understanding of how basic nuclear facilities are controlled in France</li>
 
 <br>
-
 See Medium stories for more details :
 
 <div>
