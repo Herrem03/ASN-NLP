@@ -5,9 +5,12 @@
 Streamlit app analyzing French Nuclear Regulation Authority's inspection letters using LDA, Word2vec and text mining techniques. 
 
 <h2>About</h2>
-In industrial nuclear projects, regulation can have serious impact on a project's progress. etc
+Regulatory control in the french nuclear industry has an impact on project's costs and planning
+This project aims to :
+- Build a content-based recommendation app of french nuclear regulation authority's inspection letters 
+- Analyze French nuclear regulation
 
-See Medium story for more information :
+See Medium stories for more details :
 
 <div>
  
@@ -16,6 +19,23 @@ See Medium story for more information :
 [Part II | Extracting knowledge from French Nuclear Safety Authority's Inspection mails](https://medium.com/@remi.martinie03/corpus-analysis-using-nlp-a-glimpse-at-french-nuclear-regulation-482ee6288b12)
 
 <h2>Requirements</h2>
+<div>
+
+[BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) Library for webscrapping
+
+[PDFMiner](https://pypi.org/project/pdfminer/) Text extraction tool for PDF documents
+
+[Scikit-learn](https://scikit-learn.org/stable/modules/classes.html) For Latent Dirichlet Allocation 
+
+[SpaCy](https://spacy.io/api) NLP package for text processing (stop words, lemmatization, punctuation, tokenization, etc.)
+
+[Streamlit](https://docs.streamlit.io/en/stable/) Library to create and share custom web apps for machine learning and data science.
+
+[pyLDAvis](https://github.com/bmabey/pyLDAvis) Library for interactive topic modeling visualization. 
+
+[Plotly](https://plotly.com/graphing-libraries/) Graphing library
+
+<\div>
 
 <h2>Dataset</h2>
 
