@@ -21,23 +21,23 @@ See Medium stories for more details :
 <h2>Requirements</h2>
 <div>
 
-<li>[BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) | Library for webscrapping
+[BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) | Library for webscrapping.
 
-[PDFMiner](https://pypi.org/project/pdfminer/) | Text extraction tool for PDF documents
+[PDFMiner](https://pypi.org/project/pdfminer/) | Text extraction tool for PDF documents.
 
-[Scikit-learn](https://scikit-learn.org/stable/modules/classes.html) | ML package used here for Latent Dirichlet Allocation and GridSearchCV
+[Scikit-learn](https://scikit-learn.org/stable/modules/classes.html) | ML package used here for Latent Dirichlet Allocation and GridSearchCV.
 
-[Gensim](https://radimrehurek.com/gensim/auto_examples/index.html#documentation) | NLP package used here for Word2Vec
+[Gensim](https://radimrehurek.com/gensim/auto_examples/index.html#documentation) | NLP package used here for Word2Vec.
 
-[SpaCy](https://spacy.io/api) | NLP package for text processing (stop words, lemmatization, punctuation, tokenization, etc.)
+[SpaCy](https://spacy.io/api) | NLP package for text processing (stop words, lemmatization, punctuation, tokenization, etc.).
 
 [Streamlit](https://docs.streamlit.io/en/stable/) | Library to create and share custom web apps for machine learning and data science.
 
-[pyLDAvis](https://github.com/bmabey/pyLDAvis) | Interactive topic modeling visualization library
+[pyLDAvis](https://github.com/bmabey/pyLDAvis) | Interactive topic modeling visualization library.
 
-[Plotly](https://plotly.com/graphing-libraries/) | Graphing library
+[Plotly](https://plotly.com/graphing-libraries/) | Graphing library.
 
-[Pandas](https://pandas.pydata.org/docs/) | Data handling and analysis library</li>
+[Pandas](https://pandas.pydata.org/docs/) | Data handling and analysis library.
 
 <h2>Dataset</h2>
 
