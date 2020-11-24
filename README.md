@@ -41,18 +41,19 @@ See Medium stories for more details :
 
 <h2>Dataset</h2>
 
-Dataset is generated using :
-<li>Download_pdf.py</li>
-<li>Conversion_pdf. py</li>
-
-:warning: Some .pdf are scans and therefore cannot be used. About 97% of inspection letters are taken in account up to this date : 23/11/2020.
+The dataset is larger than 200Mo and therefore not uploadable on GitHub. Use the following scripts to generate the dataset on your computer :
+<li>ASN_NLP_Data.py</li>
+<li>ASN_NLP_Scrap. py</li>
 
 <h2>Latent Dirichlet Allocation</h2>
 LDA is used to build a recommendation system.
 
-ASN_LDA.py includes :
+ASN_NLP_LDA.py includes :
 - Text preprocessing : removing stopwords, remove punctutation, lemmatization
-- LDA pipeline for enhanced GridSearch over *'max_df'* in CountVectorizer(), *'learning_decay'* and *'n_components'* in LatentDirichletAllocation()
+- LDA pipeline for enhanced GridSearch over :
+<li>*'max_df'* in CountVectorizer()</li>
+<li>*'learning_decay'* in LatentDirichletAllocation() </li>
+<li>*'n_components'* in LatentDirichletAllocation()</li>
 
 <h2>Word2Vec</h2>
 
