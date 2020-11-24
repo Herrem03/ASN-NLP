@@ -6,6 +6,7 @@ Streamlit app analyzing French Nuclear Regulation Authority's inspection letters
 
 <h2>About</h2>
 Regulatory control in the french nuclear industry has an impact on project's costs and planning. This project aims to :
+<br>
 <li>Build a content-based recommendation app of french nuclear regulation authority's inspection letters</li>
 <li>Analyze French nuclear regulation</li>
 
