@@ -261,11 +261,3 @@ if page == "Suggestions nouveau document":
     st.write('Extension de requête par Word2Vec')
     uploaded_file = st.file_uploader("Importer un pdf", type="pdf")
 
-
-    st.header("test html import")
-
-    HtmlFile = open("lda_best_total.html.html", 'r', encoding='utf-8')
-    source_code = HtmlFile.read()
-    print(source_code)
-    components.html(source_code)
-
