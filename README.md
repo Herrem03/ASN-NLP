@@ -23,23 +23,23 @@ See Medium stories for more details :
 <h2>Requirements</h2>
 <div>
 
-[BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) | Webscrapping library.
+[BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) ==4.7.1 | Webscrapping library.
 
-[PDFMiner](https://pypi.org/project/pdfminer/) | Text extraction tool for PDF documents.
+[PDFMiner](https://pypi.org/project/pdfminer/) ==20181108| Text extraction tool for PDF documents.
 
-[Scikit-learn](https://scikit-learn.org/stable/modules/classes.html) | ML package used here for Latent Dirichlet Allocation and GridSearchCV.
+[Scikit-learn](https://scikit-learn.org/stable/modules/classes.html) ==0.0| ML package used here for Latent Dirichlet Allocation and GridSearchCV.
 
-[Gensim](https://radimrehurek.com/gensim/auto_examples/index.html#documentation) | NLP package used here for Word2Vec.
+[Gensim](https://radimrehurek.com/gensim/auto_examples/index.html#documentation) ==3.7.3 | NLP package used here for Word2Vec.
 
-[SpaCy](https://spacy.io/api) | NLP package for text processing (stop words, lemmatization, punctuation, tokenization, etc.).
+[SpaCy](https://spacy.io/api) ==2.1.4| NLP package for text processing (stop words, lemmatization, punctuation, tokenization, etc.).
 
-[Streamlit](https://docs.streamlit.io/en/stable/) | Library to create and share custom web apps for machine learning and data science.
+[Streamlit](https://docs.streamlit.io/en/stable/) ==0.57.3| Library to create and share custom web apps for machine learning and data science.
 
-[pyLDAvis](https://github.com/bmabey/pyLDAvis) | Interactive topic modeling visualization library.
+[pyLDAvis](https://github.com/bmabey/pyLDAvis) ==2.1.2| Interactive topic modeling visualization library.
 
-[Plotly](https://plotly.com/graphing-libraries/) | Graphing library.
+[Plotly](https://plotly.com/graphing-libraries/) ==4.6.0| Graphing library.
 
-[Pandas](https://pandas.pydata.org/docs/) | Data handling library.
+[Pandas](https://pandas.pydata.org/docs/) ==0.24.2| Data handling library.
 
 <h2>Dataset</h2>
 
