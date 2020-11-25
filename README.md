@@ -21,6 +21,8 @@ See Medium stories for more details :
 [Part II | Extracting knowledge from French Nuclear Safety Authority's Inspection letters](https://medium.com/@remi.martinie03/corpus-analysis-using-nlp-a-glimpse-at-french-nuclear-regulation-482ee6288b12)
 
 <h2>Requirements</h2>
+See requirements.txt for complete list of requirements. Main packages used are : 
+<br>
 <div>
 
 [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) ==4.7.1 | Webscrapping library.
@@ -56,6 +58,8 @@ ASN_NLP_LDA.py includes :
 
 <h2>Word2Vec</h2>
 
+ASN_NLP_Word2vec.py
+
 <h2>Text mining</h2>
 
 ASN_mining.py includes :
@@ -63,9 +67,9 @@ ASN_mining.py includes :
 - Knowledge graph 
 
 <h2>Streamlit App</h2>
-App is available in French & English (ASN_app_fr.py & ASN_app_en.py)
+App is available only in French
 
-ASN_app_fr.py & ASN_app_en.py includes :
+ASN_NLP_App.py includes :
 - Data visualization of LDA model, Word2Vec model and text mining analysis
 - Basic search engine
 - Recommendation system (from user query extended by Word2Vec or .pdf file)
