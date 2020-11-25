@@ -27,7 +27,7 @@ See Medium stories for more details :
 
 [PDFMiner](https://pypi.org/project/pdfminer/) ==20181108 | Text extraction tool for PDF documents.
 
-[Scikit-learn](https://scikit-learn.org/stable/modules/classes.html) ==0.0 | ML package used here for Latent Dirichlet Allocation and GridSearchCV.
+[Scikit-learn](https://scikit-learn.org/stable/modules/classes.html) ==0.21.2 | ML package used here for Latent Dirichlet Allocation and GridSearchCV.
 
 [Gensim](https://radimrehurek.com/gensim/auto_examples/index.html#documentation) ==3.7.3 | NLP package used here for Word2Vec.
 
