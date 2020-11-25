@@ -50,10 +50,7 @@ LDA is used to build a recommendation system.
 
 ASN_NLP_LDA.py includes :
 - Text preprocessing : removing stopwords, remove punctutation, lemmatization
-- LDA pipeline for enhanced GridSearch over :
-<li>*'max_df'* in CountVectorizer()</li>
-<li>*'learning_decay'* in LatentDirichletAllocation() </li>
-<li>*'n_components'* in LatentDirichletAllocation()</li>
+- LDA pipeline for enhanced GridSearch over : *'max_df'* in CountVectorizer(), *'learning_decay'* in LatentDirichletAllocation(), *'n_components'* in LatentDirichletAllocation()
 
 <h2>Word2Vec</h2>
 
