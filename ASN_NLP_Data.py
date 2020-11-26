@@ -91,7 +91,6 @@ for x in liens:
         i += 1
         seconds_2 = time.time()
 
-#A TRANSFERER DANS extraction pdf !
 print("Nombre de fichiers ignorés :", count)
 print('Fichiers ignorés :', error_files)
 
