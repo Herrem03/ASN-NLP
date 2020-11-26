@@ -1,6 +1,5 @@
 #Frameworks
 import streamlit as st
-import streamlit.components.v1 as components
 import plotly.graph_objects as go
 import plotly.express as px
 import numpy as np
@@ -16,6 +15,7 @@ import pandas as pd
 from joblib import load
 import pickle
 from sklearn.metrics.pairwise import euclidean_distances, cosine_distances
+from gensim.models import Word2Vec
 
 os.getcwd()
 reload(sys)
@@ -24,7 +24,7 @@ sys.setdefaultencoding('utf8')
 #------------Chargemenent des données----------------#
 #Images
 #Images d'illustration
-Logo_ASN = Image.open('/home/herrem/Images/Logo_ASN.png')
+Logo_ASN = Image.open('/home/herrem/Images/1200px-Logo_ASN.svg.png')
 image3 = Image.open('/home/herrem/Images/LDA_principe.jpg')
 
 #Images TSNE évolution
@@ -61,6 +61,11 @@ vectorizer = pickle.load(open("/home/herrem/Documents/ASN/vectorizer_flam.pickle
 #Handle data
 data_vectorized = vectorizer.transform(data_flam)
 lda_output = model.transform(data_vectorized)
+
+#Word2Vec
+#Load model
+modelw2v = Word2Vec.load("/home/herrem/Documents/ASN/word2vec_wide.model")
+
 #------------------Fonctions-----------------#
 # Show top n keywords for each topic
 def show_topics(vectorizer, lda_model, n_words):
@@ -96,8 +101,8 @@ categories = ['Topic 1', 'Topic 2', 'Topic 3', 'Topic 4', 'Topic 5', 'Topic 6', 
 #--------------Application Streamlit-------------#
 #Sidebar
 st.sidebar.title("Outil d'analyse des lettres d'inspection de l'ASN")
-page = st.sidebar.selectbox("Menu", ["Accueil","NLP", "Exploration Simple","Exploration Avancée", "Analyse d'une lettre", "Suggestions nouveau document"])
-st.sidebar.text('Avril 2020 | Rémi Martinie')
+page = st.sidebar.selectbox("Menu", ["Accueil","NLP", "Exploration Simple", "Analyse d'une lettre", "Suggestions nouveau document","A propos"])
+st.sidebar.text('2020 | Rémi Martinie')
 st.sidebar.image(Logo_ASN, use_column_width=True)
 
 if page == "Accueil":
@@ -110,86 +115,102 @@ if page == "Accueil":
 
 
 if page == "NLP":
+    Model = st.sidebar.radio("Select Model",('Word2Vec', 'LDA'))
+
     st.title("Natural Language Processing")
     st.write("""Le Natural Language Processing (NLP) autrement appelé en français “Traitement automatique du langage naturel” est une branche très importante du Machine Learning et donc de l’intelligence artificielle. Le NLP est la capacité d’un programme à comprendre le langage humain.""")
     st.write("""Prenons quelques exemples pratiques qu’on utilise tous les jours pour mieux comprendre :""")
     st.write("""Les spams : toutes les boîtes mails utilisent un filtre antispam et cela fonctionne avec le filtrage bayésien en référence au théorème de Bayes qui est une technique statistique de détection de spams. Ces filtres vont “comprendre” le texte et trouver s’il y a des corrélations de mots qui indiquent un pourriel.""")
     st.write("""Google Traduction : vous avez probablement tous utilisé ce système et leur technologie utilise de nombreux algorithmes dont du NLP. Ici, le défi n’est pas de traduire le mot, mais de garder le sens d’une phrase dans une autre langue.""")
     st.write("""Le logiciel Siri créé par Apple ou Google Assistant utilise du NLP pour traduire du texte transcrit en du texte analysé afin de vous donner une réponse adaptée à votre demande.""")
-    st.title("Allocation de Dirichlet Latente")
-    st.image(image3, use_column_width=True)
-    st.header("Optimisation des modèles")
-    st.write("Un modèle de LDA s'optimise au travers de deux paramètres : la perplexité et l'intuition humaine")
-    st.subheader("Perplexité")
-    st.write("La perplexité est une fonction décroissante de la log-vraisemblance L(w) des documents invisibles wd. Plus la perplexité est faible, meilleur est le modèle.")
-    st.latex(r'''
-             Perplexity (\textbf{w}) = e^{-\frac{\mathscr{L}(\textbf{w})}{count of tokens}}
-             ''')
-    X = [.3,.4,.5,.6,.7,.8,.9]
-    Y = [5,10,15,20,25,30,35,40,45,50,55,60]
-    Z = [[1353,1271,1181,1154,1144,1145,1152],
-         [1289,1190,1120,1094,1087,1089,1098],
-         [1273,1167,1097,1069,1061,1061,1066],
-         [1256,1144,1077,1052,1043,1046,1051],
-         [1251,1146,1072,1044,1033,1034,1043],
-         [1243,1135,1050,1029,1023,1021,1034],
-         [1415,1191,1088,1049,1030,1030,1037],
-         [2012,1434,1230,1153,1118,1022,1048],
-         [2167,1500,1257,1169,1134,1019,1038],
-         [2340,1559,1291,1195,1159,1034,1037],
-         [2555,1655,1336,1215,1173,1033,1037],
-         [2797,1734,1354,1235,1182,1037,1033]]
 
-    learning_decay= st.slider('Learning decay', min(X), max(X),(X[0], X[-1]), step=.1)
-    n_topics = st.slider('Nombre de topics', min(Y), max(Y), (Y[0], Y[-1]), step=5)
-    st.write(n_topics[0])
-    st.write(n_topics[1])
-    c=0
-    for element in Y:
-        if element == n_topics[1]:
-            low_bound_top = c
-        if element == learning_decay[1]:
-            low_bound_lear = c
-        c+=1
-    layout = go.Layout(scene=dict(
-            xaxis=dict(title='Learning decay'),
-            yaxis=dict(title='Nombre de topics'),
-            zaxis=dict(title='Perplexity'),
-        ),
-    )
-    fig = go.Figure(data=[go.Surface(x=X, y=Y, z=Z)],layout=layout)
-    fig.update_layout(title='', autosize=False,
-                    width=750, height=750,
-                    template="plotly_white",
-                    margin=dict(l=65, r=50, b=65, t=90))
+    if Model == 'Word2Vec':
+        st.header('Word2Vec')
 
-    st.plotly_chart(fig)
-    st.subheader("Intuition humaine")
-    st.write("Après l'optimisation des paramètres statistiques, seule l'intuition humaine est capable d'estimer la qualité des thèmes obtenus")
-    if st.button('Afficher une visualisation de LDA'):
-        webbrowser.open_new_tab(r'/home/herrem/Documents/ASN/LDA_v2_topic_35_maxdf05_mindf40_bigrams.html')
-    if st.button('Afficher un TSNE'):
-        webbrowser.open_new_tab(r'/home/herrem/Documents/ASN/TSNE_ASN_topics35_perplexity30_maxdf02.html')
-    perplexity_range = st.slider('Perplexity TSNE', 5, 50, 5, step=5)
-    st.image(Image.open('/home/herrem/Images/TSNE ASN GIF/perplexity_{}.png'.format(perplexity_range)), use_column_width=True)
+    if Model == 'LDA':
+        st.title("Allocation de Dirichlet Latente")
+        st.image(image3, use_column_width=True)
+        st.header("Optimisation des modèles")
+        st.write("Un modèle de LDA s'optimise au travers de deux paramètres : la perplexité et l'intuition humaine")
+        st.subheader("Perplexité")
+        st.write("La perplexité est une fonction décroissante de la log-vraisemblance L(w) des documents invisibles wd. Plus la perplexité est faible, meilleur est le modèle.")
+        st.latex(r'''
+                Perplexity (\textbf{w}) = e^{-\frac{\mathscr{L}(\textbf{w})}{count of tokens}}
+                ''')
+        X = [.3,.4,.5,.6,.7,.8,.9]
+        Y = [5,10,15,20,25,30,35,40,45,50,55,60]
+        Z = [[1353,1271,1181,1154,1144,1145,1152],
+            [1289,1190,1120,1094,1087,1089,1098],
+            [1273,1167,1097,1069,1061,1061,1066],
+            [1256,1144,1077,1052,1043,1046,1051],
+            [1251,1146,1072,1044,1033,1034,1043],
+            [1243,1135,1050,1029,1023,1021,1034],
+            [1415,1191,1088,1049,1030,1030,1037],
+            [2012,1434,1230,1153,1118,1022,1048],
+            [2167,1500,1257,1169,1134,1019,1038],
+            [2340,1559,1291,1195,1159,1034,1037],
+            [2555,1655,1336,1215,1173,1033,1037],
+            [2797,1734,1354,1235,1182,1037,1033]]
+
+        learning_decay= st.slider('Learning decay', min(X), max(X),(X[0], X[-1]), step=.1)
+        n_topics = st.slider('Nombre de topics', min(Y), max(Y), (Y[0], Y[-1]), step=5)
+        st.write(n_topics[0])
+        st.write(n_topics[1])
+        c=0
+        for element in Y:
+            if element == n_topics[1]:
+                low_bound_top = c
+            if element == learning_decay[1]:
+                low_bound_lear = c
+            c+=1
+        layout = go.Layout(scene=dict(
+                xaxis=dict(title='Learning decay'),
+                yaxis=dict(title='Nombre de topics'),
+                zaxis=dict(title='Perplexity'),
+            ),
+        )
+        fig = go.Figure(data=[go.Surface(x=X, y=Y, z=Z)],layout=layout)
+        fig.update_layout(title='', autosize=False,
+                        width=750, height=750,
+                        template="plotly_white",
+                        margin=dict(l=65, r=50, b=65, t=90))
+
+        st.plotly_chart(fig)
+        st.subheader("Intuition humaine")
+        st.write("Après l'optimisation des paramètres statistiques, seule l'intuition humaine est capable d'estimer la qualité des thèmes obtenus")
+        if st.button('Afficher une visualisation de LDA'):
+            webbrowser.open_new_tab(r'/home/herrem/Documents/ASN/LDA_v2_topic_35_maxdf05_mindf40_bigrams.html')
+        if st.button('Afficher un TSNE'):
+            webbrowser.open_new_tab(r'/home/herrem/Documents/ASN/TSNE_ASN_topics35_perplexity30_maxdf02.html')
+        perplexity_range = st.slider('Perplexity TSNE', 5, 50, 5, step=5)
+        st.image(Image.open('/home/herrem/Images/TSNE ASN GIF/perplexity_{}.png'.format(perplexity_range)), use_column_width=True)
 
 if page == "Exploration Simple":
     st.header("Exploration simple")
-    search = st.text_input("""Moteur de recherche sur le contenu d'une lettre""", value='', key=None, type='default')
+
+    search = st.text_input("""Saisissez votre recherche""", value='uranium', key=None, type='default')
+    extension_size = st.slider('Nombre de mots à suggérer ? ', min_value=1, max_value=50, value=25, step=1)
+
+    if search in modelw2v.wv.vocab:
+        most_similar = modelw2v.wv.most_similar(positive=[search], topn=extension_size)
+        df_sim = pd.DataFrame(most_similar)
+        options = st.multiselect('Etendre votre recherche avec les mots suivants ?', df_sim[0])
+        options.append(search)
+    else:
+        st.subheader('Mot absent du dictionnaire')
+
+    st.write('-------------------------------------------------')
+
     INB = st.radio("Sélectionner l'INB",('Flamanville','Tout'))
     if INB == 'Flamanville':
         st.subheader('Résultats')
-        st.write('Nombre de résultats :',df1[['Référence','Titre', """Date d'inspection""", 'Lien url']].loc[df1.Contenu.str.contains(search,case=False)].shape[0])
-        st.table(df1[['Référence','Titre', """Date d'inspection""", 'Lien url']].loc[df1.Contenu.str.contains(search,case=False)])
-    else:
+        st.write('Nombre de résultats :',df1[['Référence','Titre', """Date d'inspection""", 'Lien url']].loc[df1.Contenu.str.contains('|'.join(options),case=False)].shape[0])
+        lettre = st.selectbox('Résultats', df1['Titre'].loc[df1.Contenu.str.contains('|'.join(options),case=False)])
+    if INB == 'Tout':
         st.subheader('Résultats')
-        st.write('Nombre de résultats :',df2[['Référence','Titre', """Date d'inspection""", 'Lien url']].loc[df2.Contenu.str.contains(search,case=False)].shape[0])
-        st.table(df2[['Référence','Titre', """Date d'inspection""", 'Lien url']].loc[df2.Contenu.str.contains(search,case=False)])
+        st.write('Nombre de résultats :',df2[['Référence','Titre', """Date d'inspection""", 'Lien url']].loc[df2.Contenu.str.contains('|'.join(options),case=False)].shape[0])
+        lettre = st.selectbox('Résultats', df2['Titre'].loc[df2.Contenu.str.contains('|'.join(options), case=False)])
 
-
-if page == "Exploration Avancée":
-    print(df_topic_keywords)
-    st.table(df_topic_keywords)
 
 if page == "Analyse d'une lettre":
     option = st.selectbox("Sélectionnez la lettre à analyser",df1['Référence'])
@@ -226,6 +247,8 @@ if page == "Analyse d'une lettre":
     fig = go.Figure()
     fig.add_trace(go.Histogram(histfunc="sum", y=v[100:], x=words[100:], name="sum"))
     st.plotly_chart(fig)
+    
+    #Show topic distribution for selected letter
     st.subheader("Topics distribution :")
     fig2 = go.Figure(data=go.Scatterpolar(
         name="Distribution de Topics",
@@ -244,6 +267,8 @@ if page == "Analyse d'une lettre":
         template = "ggplot2"
     )
     st.plotly_chart(fig2)
+    
+    #Show similar documents
     st.subheader("Documents similaires :")
     dist = st.radio("Distance", ('L2', 'Cosine'))
     n_result = st.slider('Nombre de résultats à afficher :',1,50,1)
@@ -261,3 +286,10 @@ if page == "Suggestions nouveau document":
     st.write('Extension de requête par Word2Vec')
     uploaded_file = st.file_uploader("Importer un pdf", type="pdf")
 
+
+if page == "A propos":
+    st.title("A propos")
+    st.text("Les contrôles menés par l'Autorité de Sûreté Nucléaire Française")
+    url = 'https://medium.com/@remi.martinie03/corpus-analysis-using-nlp-a-glimpse-at-french-nuclear-regulation-ce84697d47bf'
+    if st.button("Lire l'article @Medium"):
+        webbrowser.open_new_tab(url)
