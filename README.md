@@ -21,8 +21,7 @@ See Medium stories for more details :
 [Part II | Extracting knowledge from French Nuclear Safety Authority's Inspection letters](https://medium.com/@remi.martinie03/corpus-analysis-using-nlp-a-glimpse-at-french-nuclear-regulation-482ee6288b12)
 
 <h2>Requirements</h2>
-See *requirements.txt* for complete list of requirements. Main packages used are : 
-<br>
+See requirements.txt for complete list of requirements. Main packages used are : <br>
 <div>
 
 [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) ==4.7.1 | Webscrapping library.
