@@ -1,7 +1,5 @@
 <h1>ASN-NLP</h1>
 
-*:warning: Repo not finished*
-<br>
 *:warning: This is not the production version and is only for reference and learning purposes.*
 
 Streamlit app analyzing French Nuclear Regulation Authority's inspection letters using LDA, Word2vec and text mining techniques. 
@@ -12,13 +10,12 @@ This project aims to :
 <li>Get an overall understanding of how basic nuclear facilities are controlled in France</li>
 
 <br>
-See Medium stories for more details :
+See Medium story for more details :
 
 <div>
  
-[Part I | Create an exploratory app using LDA, Word2vec and Streamlit](https://medium.com/@remi.martinie03/corpus-analysis-using-nlp-a-glimpse-at-french-nuclear-regulation-ce84697d47bf)
+[Create an exploratory app using LDA, Word2vec and Streamlit](https://medium.com/@remi.martinie03/corpus-analysis-using-nlp-a-glimpse-at-french-nuclear-regulation-ce84697d47bf)
 
-[Part II | Extracting knowledge from French Nuclear Safety Authority's Inspection letters](https://medium.com/@remi.martinie03/corpus-analysis-using-nlp-a-glimpse-at-french-nuclear-regulation-482ee6288b12)
 
 <h2>Requirements</h2>
 See requirements.txt for complete list of requirements. Main packages used are : <br>
@@ -59,17 +56,10 @@ ASN_NLP_LDA.py includes :
 
 ASN_NLP_Word2vec.py
 
-<h2>Text mining</h2>
-
-ASN_mining.py includes :
-- Demands analysis 
-- Knowledge graph 
-
 <h2>Streamlit App</h2>
 App is available only in French
 
 ASN_NLP_App.py includes :
-- Data visualization of LDA model, Word2Vec model and text mining analysis
 - Basic search engine
 - Recommendation system (from user query extended by Word2Vec or .pdf file)
 
