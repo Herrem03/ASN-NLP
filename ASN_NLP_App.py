@@ -216,19 +216,12 @@ if page == "Analyse d'une lettre":
     option = st.selectbox("Sélectionnez la lettre à analyser",df1['Référence'])
     st.write('Le document sélectionné est :', option)
     if st.button('Lire la lettre'):
-        #os.startfile(r'/home/herrem/Documents/ASN/ASN_pdf/{}'.format(df1[['Référence']].loc[df1['Référence'].str.contains(option,case=False)].iloc[0][0]))
         subprocess.Popen([r'/home/herrem/Documents/ASN/ASN_pdf/{}'.format(df1[['Référence']].loc[df1['Référence'].str.contains(option,case=False)].iloc[0][0])], shell=True)
-        #webbrowser.open(r'/home/herrem/Documents/ASN/ASN_pdf/{}'.format(df1[['Référence']].loc[df1['Référence'].str.contains(option,case=False)].iloc[0][0]))
-
-
+         
     sentences = nltk.tokenize.sent_tokenize(df1[['Contenu']].loc[df1['Référence'].str.contains(option, case=False)].iloc[0][0])
     demand=[]
     for element in sentences:
         if re.findall(r'([^.]*je vous demande[^.]*)', element):
-            #tokens = nltk.word_tokenize(element)
-            #tokens = [x.lower() for x in tokens]
-            #tokens = [item for item in tokens if item.isalpha() and len(item)>2]
-            #print(element)
             demand.append(element)
 
     st.subheader('Synthèse des demandes')
