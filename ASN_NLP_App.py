@@ -17,15 +17,11 @@ import pickle
 from sklearn.metrics.pairwise import euclidean_distances, cosine_distances
 from gensim.models import Word2Vec
 
-os.getcwd()
-reload(sys)
-sys.setdefaultencoding('utf8')
-
 #------------Chargemenent des données----------------#
 #Images
 #Images d'illustration
-Logo_ASN = Image.open('/home/herrem/Images/1200px-Logo_ASN.svg.png')
-image3 = Image.open('/home/herrem/Images/LDA_principe.jpg')
+Logo_ASN = Image.open('Images/1200px-Logo_ASN.svg.png')
+image3 = Image.open('Images/LDA_principe.jpg')
 
 #Images TSNE évolution
 TSNE_5 = Image.open('/home/herrem/Images/TSNE ASN GIF/perplexity_5.png')
@@ -48,7 +44,7 @@ df1.columns = ['Référence', 'Titre', """Date d'inspection""", 'Lien url', 'Con
 data_flam = df1['Contenu'].values.tolist()
 
 #All
-with open('/home/herrem/Documents/ASN/ASN_LDA_dict_utf8') as f:
+with open('ASN_LDA_dict_utf8') as f: #Repertory where the LDA dictionnary is stored
    data_all = json.load(f)
 df2 = pd.DataFrame(data_all)
 df2.columns = ['Référence', 'Titre', """Date d'inspection""", 'Lien url', 'Contenu']
@@ -57,14 +53,14 @@ df2.columns = ['Référence', 'Titre', """Date d'inspection""", 'Lien url', 'Con
 #Load model
 model = load('/home/herrem/Documents/ASN/LDA_flam.pickle')
 print(model.get_params())
-vectorizer = pickle.load(open("/home/herrem/Documents/ASN/vectorizer_flam.pickle","rb"))
+vectorizer = pickle.load(open("vectorizer_flam.pickle","rb")) #Repertory where the vectorizer is
 #Handle data
 data_vectorized = vectorizer.transform(data_flam)
 lda_output = model.transform(data_vectorized)
 
 #Word2Vec
 #Load model
-modelw2v = Word2Vec.load("/home/herrem/Documents/ASN/word2vec_wide.model")
+modelw2v = Word2Vec.load("word2vec_wide.model") 
 
 #------------------Fonctions-----------------#
 # Show top n keywords for each topic
